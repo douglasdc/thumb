@@ -1,14 +1,19 @@
 {
-  "name": "thumbnail",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "bun-types": "latest",
-    "prettier": "^3.0.3",
-    "tsc": "^2.0.4",
-    "typescript": "^5.2.2"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+    "name": "thumbnail",
+    "scripts": {
+        "build": "rm -rf dist && tsc --build",
+        "serve": "node dist/server.js",
+        "dev": "tsx watch src/server.ts"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.7",
+        "prettier": "^3.1.1",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.7.0",
+        "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "@hono/node-server": "^1.4.0",
+        "hono": "^3.12.0"
+    }
 }
